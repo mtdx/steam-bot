@@ -17,3 +17,19 @@ export const existsAsync = (path: string | Buffer) =>
       resolve(data);
     });
   });
+
+  export const writeFileAsync = (filename: string, data: any) =>
+  new Promise((resolve, reject) => {
+    writeFile(filename, data, err => {
+      if (err) {
+        return reject(err);
+      }
+
+      resolve();
+    });
+  });
+
+export const waitAsync = (seconds = Math.random()) =>
+  new Promise(resolve => {
+    setTimeout(resolve, seconds * 1000);
+  });
