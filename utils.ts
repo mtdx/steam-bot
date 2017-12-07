@@ -7,7 +7,7 @@ export const existsAsync = (path: string | Buffer) =>
     });
   });
 
-  export const readFileAsync = (filename: string) =>
+export const readFileAsync = (filename: string) =>
   new Promise<Buffer>((resolve, reject) => {
     readFile(filename, (err, data) => {
       if (err) {
@@ -18,7 +18,7 @@ export const existsAsync = (path: string | Buffer) =>
     });
   });
 
-  export const writeFileAsync = (filename: string, data: any) =>
+export const writeFileAsync = (filename: string, data: any) =>
   new Promise((resolve, reject) => {
     writeFile(filename, data, err => {
       if (err) {
