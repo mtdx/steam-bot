@@ -6,3 +6,14 @@ export const existsAsync = (path: string | Buffer) =>
       resolve(exists);
     });
   });
+
+  export const readFileAsync = (filename: string) =>
+  new Promise<Buffer>((resolve, reject) => {
+    readFile(filename, (err, data) => {
+      if (err) {
+        return reject(err);
+      }
+
+      resolve(data);
+    });
+  });
