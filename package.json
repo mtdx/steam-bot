@@ -1,0 +1,59 @@
+{
+    "name": "steam-trade-bot",
+    "version": "1.0.0",
+    "description": "Steam Trade Bot",
+    "main": "index.ts",
+    "scripts": {
+      "test": "jest --coverage --forceExit",
+      "build": "rm -rf dist && tsc -p tsconfig.json",
+      "start": "./index.js | ./formatter.js",
+      "start-dev": "ts-node --fast index.ts"
+    },
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "author": "",
+    "license": "ISC",
+    "homepage": "",
+    "private": true,
+    "dependencies": {
+      "bunyan": "^1.8.10",
+      "pg-monitor": "^0.8.2",
+      "pg-promise": "^6.3.6",
+      "ramda": "^0.24.1",
+      "steam-community": "^0.2.1-0",
+      "steam-totp": "^2.0.1",
+      "steam-tradeoffer-manager": "^2.8.0",
+      "steam-user": "^3.21.4"
+    },
+    "devDependencies": {
+      "@types/bunyan": "^1.8.0",
+      "@types/jest": "^20.0.2",
+      "@types/ramda": "^0.24.5",
+      "jest": "^21.2.1",
+      "nodemon": "^1.11.0",
+      "ts-jest": "^21.1.2",
+      "ts-node": "^3.0.6",
+      "tslint": "~5.4.3",
+      "tslint-consistent-codestyle": "^1.5.1",
+      "typescript": "2.4.x",
+      "typescript-formatter": "^5.2.0"
+    },
+    "jest": {
+      "testEnvironment": "node",
+      "mapCoverage": true,
+      "collectCoverageFrom": [
+        "Instance.ts"
+      ],
+      "transform": {
+        ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      },
+      "testRegex": "(.*\\.test\\.ts)$",
+      "moduleFileExtensions": [
+        "ts",
+        "js"
+      ]
+    }
+  }
+  
